@@ -20,7 +20,7 @@ import java.util.*;
  * @since 1.0.0
  */
 public abstract class ReaderTokenizer {
-    Logger logger = LoggerFactory.getLogger(getClass());
+    private final Logger logger = LoggerFactory.getLogger(getClass());
     protected final Reader reader;
     protected final CharBuffer charBuffer;
     protected int streamOffset = 0;

@@ -27,6 +27,8 @@
         <dependency.logback.version>1.1.5</dependency.logback.version>
         <dependency.commons-lang3.version>3.4</dependency.commons-lang3.version>
         <dependency.guava.version>19.0</dependency.guava.version>
+        <dependency.lucene.version>5.4.1</dependency.lucene.version>
+        <dependency.curator.version>2.9.0</dependency.curator.version>
     </properties>
 
     <dependencies>
@@ -69,6 +71,30 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${dependency.guava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-analyzers-common</artifactId>
+            <version>${dependency.lucene.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-test-framework</artifactId>
+            <version>${dependency.lucene.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+            <version>${dependency.curator.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-test</artifactId>
+            <version>${dependency.curator.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

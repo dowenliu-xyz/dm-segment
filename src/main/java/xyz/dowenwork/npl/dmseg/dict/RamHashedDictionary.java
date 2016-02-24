@@ -21,7 +21,7 @@ public final class RamHashedDictionary implements Dictionary {
     private float nodeLoadFactor = 0.8F;
     private int size = 0;
     private String bookTag = "DM-SEG";
-    private Map<Character, WordPath> branches = Collections.synchronizedMap(new HashMap<Character, WordPath>());
+    private final Map<Character, WordPath> branches = Collections.synchronizedMap(new HashMap<Character, WordPath>());
 
     /**
      * 获取Hash节点初始化容量
@@ -194,7 +194,7 @@ public final class RamHashedDictionary implements Dictionary {
     }
 
     private class Itr implements Iterator<WordPath> {
-        LinkedList<Iterator<WordPath>> curStack = new LinkedList<>();
+        final LinkedList<Iterator<WordPath>> curStack = new LinkedList<>();
         Iterator<WordPath> cur;
 
         public Itr() {
@@ -239,7 +239,7 @@ public final class RamHashedDictionary implements Dictionary {
      * Hash散列的词路径实现，用于内存存储表示
      */
     public class HashWordPath extends WordPath {
-        Map<Character, WordPath> branches;
+        final Map<Character, WordPath> branches;
 
         public HashWordPath(WordPath parentPath, char fork) {
             super(parentPath, fork);

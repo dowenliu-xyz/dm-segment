@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
  * @since 1.0.0
  */
 public class DefaultSegmenterFactoryTest {
-    Logger logger = LoggerFactory.getLogger(getClass());
+    private final Logger logger = LoggerFactory.getLogger(getClass());
     private DefaultSegmenterFactory segmenterFactory;
 
     @BeforeClass

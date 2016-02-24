@@ -70,7 +70,7 @@ public class Token implements Fragment {
 
     final Type type;
     protected String value;
-    protected Set<String> types = Collections.synchronizedSet(new HashSet<String>(5, 0.75F));
+    protected final Set<String> types = Collections.synchronizedSet(new HashSet<String>(5, 0.75F));
     protected final int offset;
     protected int end; // end处的字不属性此Token
     protected int positionIncrement = 0; // 在被ReaderTokenizer取出后应将offset与之前取出的Token对象比较，有增加则此处设为1

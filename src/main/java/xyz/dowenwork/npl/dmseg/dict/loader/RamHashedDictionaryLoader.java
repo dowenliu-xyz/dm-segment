@@ -2,7 +2,6 @@ package xyz.dowenwork.npl.dmseg.dict.loader;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import xyz.dowenwork.npl.dmseg.dict.Dictionary;
 import xyz.dowenwork.npl.dmseg.dict.RamHashedDictionary;
 
 import java.io.Reader;
@@ -11,8 +10,17 @@ import java.io.Reader;
  * @author liufl
  * @since 1.0.0
  */
-public class RamHashedDictionaryLoader extends AbstractDictionaryLoader<Dictionary> {
-    Logger logger = LoggerFactory.getLogger(getClass());
+public class RamHashedDictionaryLoader extends AbstractDictionaryLoader {
+    private static RamHashedDictionaryLoader instance;
+    private final Logger logger = LoggerFactory.getLogger(getClass());
+
+    public static synchronized AbstractDictionaryLoader getInstance() {
+        if (instance == null) {
+            instance = new RamHashedDictionaryLoader();
+        }
+        return instance;
+    }
+
     public WordReader wrapReader(Reader reader) {
         return new SimpleLineWordReader(reader);
     }

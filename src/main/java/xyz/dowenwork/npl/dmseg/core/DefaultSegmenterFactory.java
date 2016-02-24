@@ -21,7 +21,7 @@ import java.util.List;
  */
 public class DefaultSegmenterFactory implements SegmenterFactory {
     private final static AbstractDictionaryLoader LOADER = new RamHashedDictionaryLoader();
-    Logger logger = LoggerFactory.getLogger(getClass());
+    private final Logger logger = LoggerFactory.getLogger(getClass());
     private final List<DictResource> dictSources = Collections.synchronizedList(Lists.<DictResource>newArrayList());
 
     public List<DictResource> getDictSources() {

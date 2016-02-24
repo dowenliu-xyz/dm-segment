@@ -23,7 +23,7 @@ public class DictWord implements Fragment, Serializable {
     /**
      * 词类型，可能是词性标注
      */
-    protected Set<String> types = Collections.synchronizedSet(new HashSet<String>(2, 0.75F));
+    protected final Set<String> types = Collections.synchronizedSet(new HashSet<String>(2, 0.75F));
     protected WordPath path = null;
 
     /**

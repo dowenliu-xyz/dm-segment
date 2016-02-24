@@ -11,7 +11,7 @@ import java.io.Reader;
  * @author liufl
  * @since 1.0.0
  */
-public abstract class AbstractDictionaryLoader<T extends Dictionary> {
+public abstract class AbstractDictionaryLoader {
     /**
      * 将一个普通Reader对象包装成一个WordRecordReader对象
      *
@@ -26,7 +26,7 @@ public abstract class AbstractDictionaryLoader<T extends Dictionary> {
      * @param reader 源
      * @return 不会返回 {@code null} ，如果源无有效输入，返回一个空的字典对象
      */
-    public abstract T readIn(Reader reader);
+    public abstract Dictionary readIn(Reader reader);
 
     /**
      * 使用指定输入源作为补丁补充到字典中
@@ -34,7 +34,7 @@ public abstract class AbstractDictionaryLoader<T extends Dictionary> {
      * @param dictionary 已有的字典对象
      * @param reader     源
      */
-    public void apply(T dictionary, Reader reader) {
+    public void apply(Dictionary dictionary, Reader reader) {
         WordReader wordReader = this.wrapReader(reader);
         while (wordReader.hasNextWord()) {
             DictWord nextWord = wordReader.nextWord();

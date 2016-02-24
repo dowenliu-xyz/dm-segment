@@ -16,8 +16,8 @@ import java.util.NoSuchElementException;
  * 基于Hash 的默认实现
  */
 public class DefaultSegmenter implements Segmenter {
-    Logger logger = LoggerFactory.getLogger(getClass());
-    List<Dictionary> dictionaries = Collections
+    private final Logger logger = LoggerFactory.getLogger(getClass());
+    private final List<Dictionary> dictionaries = Collections
             .synchronizedList(Lists.<Dictionary>newArrayList());
 
     @Override

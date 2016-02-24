@@ -12,14 +12,13 @@ import java.util.List;
 import java.util.Map;
 
 import static org.junit.Assert.*;
-import static org.junit.Assert.assertEquals;
 
 /**
  * @author liufl
  * @since 1.0.0
  */
 public class RamHashedDictionaryTest {
-    private Logger logger = LoggerFactory.getLogger(getClass());
+    private final Logger logger = LoggerFactory.getLogger(getClass());
     private RamHashedDictionary dict;
 
     @BeforeClass
@@ -84,7 +83,7 @@ public class RamHashedDictionaryTest {
     }
 
     private class MockWordPath extends WordPath {
-        Map<Character, WordPath> branches;
+        final Map<Character, WordPath> branches;
 
         public MockWordPath(MockWordPath parentPath, char fork) {
             super(parentPath, fork);
