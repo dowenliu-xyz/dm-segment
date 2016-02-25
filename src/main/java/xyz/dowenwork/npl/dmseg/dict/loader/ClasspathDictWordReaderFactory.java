@@ -24,8 +24,7 @@ public class ClasspathDictWordReaderFactory implements DictWordReaderFactory {
 
     @Override
     public Reader createReader(String resource) throws IOException {
-        InputStream resourceAsStream = Thread.currentThread().getContextClassLoader()
-                .getResourceAsStream(resource);
+        InputStream resourceAsStream = getClass().getClassLoader().getResourceAsStream(resource);
         return new InputStreamReader(resourceAsStream);
     }
 }
