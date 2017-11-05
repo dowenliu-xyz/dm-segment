@@ -24,7 +24,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <dependency.junit.version>4.12</dependency.junit.version>
         <dependency.slf4j.version>1.7.25</dependency.slf4j.version>
-        <dependency.logback.version>1.1.7</dependency.logback.version>
+        <dependency.logback.version>1.2.3</dependency.logback.version>
         <dependency.commons-lang3.version>3.4</dependency.commons-lang3.version>
         <dependency.guava.version>19.0</dependency.guava.version>
         <dependency.lucene.version>6.2.0</dependency.lucene.version>
